@@ -1,0 +1,285 @@
+html,
+body,
+h1,
+h2,
+h3,
+a,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Vollkorn', Georgia, serif;
+  font-size: 1.125rem;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Grid-Geral*/
+
+.container-grid {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) 4fr 250px;
+  column-gap: 20px;
+  grid-template-areas:
+    'header header header'
+    'sidenav main aside'
+    'footer footer footer';
+}
+
+/* Header */
+
+.header {
+  grid-area: header;
+  background: #222222e8;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.menu-logo {
+  flex: 1 1 100px;
+  margin: 0 20px;
+  max-width: 250px;
+}
+
+.menu-nav {
+  flex: 1;
+}
+
+.menu-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.menu-nav li a {
+  display: block;
+  color: white;
+  font-size: 1.125rem;
+  background: #8844ee3a;
+  margin: 10px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.menu-nav li a:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Side-Nav */
+
+.sidenav {
+  grid-area: sidenav;
+  background: #fafbfc;
+  padding: 30px;
+}
+
+.sidenav li a {
+  display: block;
+  min-width: 80px;
+  max-width: 120px;
+  background: white;
+  margin: 0 auto 30px auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0 rgb(44 44 44 / 15%);
+  transition: 0.2s ease-out;
+}
+
+.sidenav li a:hover {
+  background: #8844ee3a;
+}
+
+.sidenav img {
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+/* Main */
+
+.main-container {
+  grid-area: main;
+  max-width: 960px;
+  padding: 30px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+
+
+.main-container img {
+  border-radius: 5px;
+}
+
+.col-wide {
+  grid-column: 1 / -1;
+}
+
+.image-1 {
+  grid-row: span 2;
+  align-self: end;
+}
+
+/* Style Main */
+
+.title {
+  color: #8844ee;
+}
+
+.title h1 {
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.title span {
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+p {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1.2rem;
+  height: 1.6;
+  letter-spacing: -0.005rem;
+}
+
+.info p + p {
+  margin-top: 30px;
+}
+
+/* Caract */
+
+.caract {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.caract span {
+  font-style: italic;
+  display: block;
+}
+
+.caract > div {
+  width: 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #222222e8, #2222229c);
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  position: relative;
+}
+
+.caract > div:first-child {
+  margin-right: 30px;
+}
+
+.number {
+  font-size: 3rem;
+  color: white;
+  line-height: 1;
+  margin: 10px auto;
+}
+
+.target {
+  background: white;
+  color: #8844ee;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 0;
+  position: relative;
+  top: 2px;
+}
+
+.destaque {
+  max-width: 25rem;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8844ee;
+}
+
+.blockquote,
+.atributs {
+  max-width: 20rem;
+  padding: 20px;
+  align-self: start;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0 rgba(44, 44, 44, 0.15);
+  background: linear-gradient(135deg, #222222e8, #2222229c);
+}
+
+.blockquote p {
+  max-width: 500px;
+  color: white;
+  font-size: 1.125rem;
+  font-style: italic;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.atributs li + li {
+  border-top: 2px solid #b07dfb;
+}
+
+.atributs li {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.125rem;
+  padding: 15px;
+}
+
+/* Aside */
+
+.aside {
+  grid-area: aside;
+  background: #fafbfc;
+  display: grid;
+  align-content: start;
+  padding: 30px;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.aside-item img {
+  border-radius: 5px;
+}
+
+/* footer */
+
+.footer {
+  grid-area: footer;
+  background: #222222e8;
+  padding: 30px;
+}
+
+.footer p {
+  color: #8844ee;
+  font-size: 1rem;
+  font-style: italic;
+  text-align: center;
+}
